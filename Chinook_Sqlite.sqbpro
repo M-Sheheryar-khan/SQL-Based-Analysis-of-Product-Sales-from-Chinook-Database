@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="Chinook_Sqlite.sqlite" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3954"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Album" custom_title="0" dock_id="1" table="4,5:mainAlbum"/><dock_state state="000000ff00000000fd0000000100000002000005bb0000038ffc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005bb0000012900ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Album" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="56"/><column index="2" value="300"/><column index="3" value="54"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">SELECT Track.Name, SUM(InvoiceLine.Quantity) AS Total_Sold, RANK() OVER (ORDER BY SUM(InvoiceLine.Quantity) DESC) AS Sales_Rank
+FROM InvoiceLine
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+GROUP BY Track.Name
+ORDER BY Sales_Rank
+LIMIT 10;
+
+SELECT Customer.Country, SUM(InvoiceLine.Quantity * InvoiceLine.UnitPrice) AS Total_Revenue
+FROM Invoice
+JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+GROUP BY Customer.Country
+ORDER BY Total_Revenue DESC;
+
+SELECT strftime('%Y-%m', Invoice.InvoiceDate) AS Month, SUM(InvoiceLine.UnitPrice * InvoiceLine.Quantity) AS Total_Revenue,RANK() OVER (ORDER BY SUM(InvoiceLine.UnitPrice * InvoiceLine.Quantity) DESC) AS Month_Rank
+FROM Invoice
+JOIN InvoiceLine ON Invoice.InvoiceId = InvoiceLine.InvoiceId
+GROUP BY Month
+ORDER BY Month;
+
+SELECT Genre.Name AS Genre, SUM(InvoiceLine.Quantity) AS Total_Sold
+FROM InvoiceLine
+JOIN Track ON InvoiceLine.TrackId = Track.TrackId
+JOIN Genre ON Track.GenreId = Genre.GenreId
+GROUP BY Genre.Name
+ORDER BY Total_Sold DESC;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

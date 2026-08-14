@@ -60,7 +60,7 @@ Cumulative revenue grew steadily and predictably across the ~5-year dataset, rea
 ### 6. Which customers are most valuable, and which are at risk of churning?
 RFM segmentation surfaced a top tier of repeat customers who all placed exactly 7 orders — e.g. Helena Holý ($49.62 spent, last purchase 48 days before the analysis cutoff). Notably, recency varies widely even among top spenders (from 17 to 443 days), showing frequency and monetary value don't always move together with recency — some high-value customers may already be going quiet.
 
-![RFM Segmentation](images/06_rfm_segmentation.png)
+![RFM Segmentation](/06_rfm_segmentation.png)
 
 ### 7. Which tracks have never sold?
 **1,519 tracks** — a substantial share of the total catalog — have zero recorded sales. This is a clear signal for bundling, promotion, or catalog trimming rather than treating all inventory as equally viable.

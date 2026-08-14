@@ -35,27 +35,27 @@ The focus isn't just running queries — it's demonstrating the SQL techniques (
 ### 1. Which tracks sell the most units overall?
 "The Trooper" leads with 5 units sold; a cluster of tracks (including "Untitled," "The Number of the Beast," and "Eruption") tie at 4 units each — sales at the individual track level are thin and spread across many titles rather than concentrated in a few hits.
 
-![Top Selling Tracks](images/01_top_selling_tracks.png)
+![Top Selling Tracks](01_top_selling_tracks.png)
 
 ### 2. Which countries generate the most revenue?
 **USA leads by a wide margin** at $523.06, nearly 1.7x Canada ($303.96), the next-highest country. France ($195.10) and Brazil ($190.10) round out the top 4, with revenue dropping off steeply after the top 5 markets.
 
-![Revenue per Region](images/02_revenue_per_region.png)
+![Revenue per Region](02_revenue_per_region.png)
 
 ### 3. Which genres are most popular in each country?
 Rock and Alternative & Punk dominate across most markets. In the USA specifically, Rock leads clearly, with Latin and Metal following. Several countries show close ties between their top 1–2 genres rather than one runaway favorite — regional taste is more competitive than a single global ranking would suggest.
 
-![Genre Popularity by Country (USA)](images/03_genre_by_country_usa.png)
+![Genre Popularity by Country (USA)](03_genre_by_country_usa.png)
 
 ### 4. Is revenue trending up or down month to month?
 Revenue is largely flat month to month (many months repeat ~$37.62), punctuated by sharp swings — a +39.87% jump in Jan 2010 and a -25.68% drop in Jul 2011 stand out. This pattern suggests revenue is driven by a small number of invoices per month rather than steady transaction volume.
 
-![Month-over-Month Growth](images/04_mom_revenue_growth.png)
+![Month-over-Month Growth](04_mom_revenue_growth.png)
 
 ### 5. How has revenue accumulated over time?
 Cumulative revenue grew steadily and predictably across the ~5-year dataset, reaching roughly **$2,328 by December 2013**, with no plateaus or declines in the running total — consistent, if modest, month-over-month contribution throughout.
 
-![Cumulative Revenue](images/05_cumulative_revenue.png)
+![Cumulative Revenue](05_cumulative_revenue.png)
 
 ### 6. Which customers are most valuable, and which are at risk of churning?
 RFM segmentation surfaced a top tier of repeat customers who all placed exactly 7 orders — e.g. Helena Holý ($49.62 spent, last purchase 48 days before the analysis cutoff). Notably, recency varies widely even among top spenders (from 17 to 443 days), showing frequency and monetary value don't always move together with recency — some high-value customers may already be going quiet.
